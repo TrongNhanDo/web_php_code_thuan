@@ -4,7 +4,7 @@
 			<a href="?request=home" class="dropbtn"><i class="fa-solid fa-house-user"></i> HOMEPAGE</a>
 		</div>
 		<div class="dropdown">
-			<a class="dropbtn"><i class="fa-brands fa-product-hunt"></i> Products</a>
+			<a href="?request=product" class="dropbtn"><i class="fa-brands fa-product-hunt"></i> Products</a>
 			<div class="dropdown-content">
 				<a href=""><i class="fa-solid fa-angles-right"></i> Name Printing Case</a>
 				<a href=""><i class="fa-solid fa-angles-right"></i> Double Case</a>
@@ -25,15 +25,29 @@
 		<div class="dropdown">
 			<a href="?request=cart" class="dropbtn"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
 		</div>
+		
 		<div class="dropdown">
 			<a class="dropbtn"><i class="fa-solid fa-user"></i> Account</a>
+			<!-- Kiểm tra xem người dùng đăng nhập chưa -->
 			<div class="dropdown-content">
-			<a href="?request=login">Login</a>
-			<a href="?request=register">Register</a>
+				<!-- Nếu chưa đăng nhập thành hiện nút login vs register -->
+				<?php if(!isset($_SESSION['user'])): ?>
+				<a href="?request=login">Login</a>
+				<a href="?request=register">Register</a>
+				<?php else: ?>
+				<!-- Nếu đăng nhập rồi thì hiện nút account manage vs logout -->
+				<a href="?request=account_manage">
+					<?=$_SESSION['user']?> 
+				</a>
+				<a href="?request=logout">Logout</a>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="dropdown">
-			<a href="?request=cart" class="dropbtn"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+			<form action="?request=search" method="post">
+				<input type="text" name="myInput" id="myInput" onkeyup="" placeholder="Search for names.." value="">
+				<input type="submit" name="btnsearch" id="btnsearch" value="Search">
+			</form>
 		</div>
 	</div>
 </div>
@@ -56,6 +70,7 @@
 	}
 
 	.dropdown-content {
+		z-index: 10;
 		display: none;
 		position: absolute;
 		background-color: #f9f9f9;
@@ -88,5 +103,15 @@
 	}
 	.header_phai > .dropdown{
 		float: right;
+	}
+	#myInput {
+		width: 60%;
+		font-size: 16px;
+		padding: 5px 10px;
+		border: 1px solid #ddd;
+		margin-top: 8px;
+	}
+	#btnsearch{
+		padding: 7px 10px;
 	}
 </style>

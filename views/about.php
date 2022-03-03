@@ -80,7 +80,7 @@
 		list-style: none;
 		padding-bottom: 5px;
 	}
-	h4 {
+	.col-md-3 h4  {
 		padding-top: 7px;
 		font-weight: bold;
 	}

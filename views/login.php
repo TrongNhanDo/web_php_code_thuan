@@ -1,17 +1,21 @@
 <?php 
-	$alert ='';
-	if(isset($_POST['submit'])){
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$query = "select * from users where email='$username' and password='$password'";
-		$ketqua = $connect -> query($query);
-		if(mysqli_num_rows($ketqua)==false){
-			$alert = "Tên đăng nhập hoặc mật khẩu không đúng!";
-		}else{
-			$_SESSION['user'] = $username;	
-			echo "<script>location.href = '.';</script>";
+	function login(){
+		global $connect;
+		if(isset($_POST['submit'])){
+			$username = $_POST['username'];
+			$password = md5($_POST['password']);
+			$query = "select * from users where email='$username' and password='$password'";
+			$ketqua = $connect -> query($query);
+			if(mysqli_num_rows($ketqua)==false){
+				return "Tên đăng nhập hoặc mật khẩu không đúng!";
+			}else{
+				$_SESSION['user'] = $username;	
+				echo "<script>location.href = '.';</script>";
+			}
 		}
+		return "";
 	}
+	$alert = login();
 ?>
 <div class="login">
 	<form method="post">
@@ -28,7 +32,7 @@
 		</div>
 		<div class="contai" style="background-color:#f1f1f1">
 			<button type="button" class="cancelbtn">Cancel</button>
-			<span class="psw">Forgot password? <a href="#">Register</a> here</span>
+			<span class="psw">Forgot password? <a href="?request=register">Register</a> here</span>
 		</div>
 	</form>
 </div>
@@ -45,13 +49,13 @@
 	width: 90%;
 	margin: auto;
 }
-form {
+.login form {
 	border: 3px solid #f1f1f1;
 	width: 80%;
 	margin: auto;
 }
 
-input[type=text], input[type=password] {
+.login input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -60,7 +64,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button, .button {
+.login button, .button {
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
@@ -70,7 +74,7 @@ button, .button {
   width: 100%;
 }
 
-button:hover {
+.login button:hover {
   opacity: 0.8;
 }
 

@@ -1,24 +1,23 @@
 <div class="home">
 	<div class="vd">
-		<video src="../public/video/tranh_khuyet.mp4" controls muted autoplay>
-		</video>
+		<img src="https://theme.hstatic.net/1000345494/1000735128/14/slideshow_2.jpg?v=658" alt="" width="100%">
 	</div>
 	<div class="item">
 		<div class="img-container">
 			<a href="">
-				<img src="https://pdp.edu.vn/wp-content/uploads/2021/06/hinh-anh-suy-tu-1.jpg" alt="">
+				<img src="https://cdn.chanhtuoi.com/uploads/2018/02/op-tk-5.PNG" alt="">
 				<h3>DESIGN YOURSELF</h3>
 			</a>
 		</div>
 		<div class="img-container">
 			<a href="">
-				<img src="https://pdp.edu.vn/wp-content/uploads/2021/06/hinh-anh-suy-tu-1.jpg" alt="">
+				<img src="https://hatocase.com/wp-content/uploads/2021/03/op-lung-dien-thoai-in-hinh-ve-chibi-8.1-1.jpg" alt="">
 				<h3>THANKS TO DESIGN</h3>
 			</a>
 		</div>
 		<div class="img-container">
 			<a href="">
-				<img src="https://pdp.edu.vn/wp-content/uploads/2021/06/hinh-anh-suy-tu-1.jpg" alt="">
+				<img src="https://w88betvn.com/wp-content/uploads/sites/5/2019/07/customersupport.png" alt="">
 				<h3>CONTACT US</h3>
 			</a>
 		</div>
@@ -31,7 +30,7 @@
 	.home{
 		min-height: 1000px;
 	}
-	.vd video{
+	.vd {
 		width: 100%;
 	}
 	.item{
@@ -60,10 +59,10 @@
 	.img-container h3{
 		width: 100%;
 		position: absolute;
-		padding: 20px 10px;
+		padding: 10px 10px;
 		bottom: 0px;
-		background-color: gray;
+		background-color: white;
 		opacity: 0.6;
-		color: white
+		color: black
 	}
 </style>

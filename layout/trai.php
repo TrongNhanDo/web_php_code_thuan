@@ -2,12 +2,12 @@
 	<h4><a href="">THANKS TO DESIGN</a></h4>	
 	<h4>COLLECTION <i class="fa-solid fa-square-caret-down"></i></h4>
 	<ul>		
-		<li><a href=""><i class="fa-solid fa-angles-right"></i> Name Printing Case</a></li>
-		<li><a href=""><i class="fa-solid fa-angles-right"></i> Double Case</a></li>
-		<li><a href=""><i class="fa-solid fa-angles-right"></i> Sketch Print Case</a></li>
-		<li><a href=""><i class="fa-solid fa-angles-right"></i> Beautiful Personal Image Design Template</a></li>
-		<li><a href=""><i class="fa-solid fa-angles-right"></i> Chibi Drawing Case</a></li>
-		<li><a href=""><i class="fa-solid fa-angles-right"></i> Company Logo Print Case</a></li>
+		<li><a href="?request=search&cateId=1"><i class="fa-solid fa-angles-right"></i> Name Printing Case</a></li>
+		<li><a href="?request=search&cateId=2"><i class="fa-solid fa-angles-right"></i> Double Case</a></li>
+		<li><a href="?request=search&cateId=3"><i class="fa-solid fa-angles-right"></i> Sketch Print Case</a></li>
+		<li><a href="?request=search&cateId=4"><i class="fa-solid fa-angles-right"></i> Beautiful Personal Image Design Template</a></li>
+		<li><a href="?request=search&cateId=5"><i class="fa-solid fa-angles-right"></i> Chibi Drawing Case</a></li>
+		<li><a href="?request=search&cateId=6"><i class="fa-solid fa-angles-right"></i> Company Logo Print Case</a></li>
 	</ul>
 	<h4><a href="">DESIGN YOURSELF</a></h4>	
 	<h4><a href="">WHOLESALERS & BUSINESSES</a></h4>
@@ -22,6 +22,8 @@
 <style>
 	.trai{
 		background-color: #f1f1f1;
+		margin-top: 55px;
+		margin-bottom: 80px;
 	}
 	.trai h4{
 		padding-left: 15px;
@@ -45,10 +47,9 @@
 		text-decoration: none;
 		color: black;
 		display: block;
-		padding: 10px 0px;
+		padding: 10px 0px ;
 	}
 	.trai ul li a:hover{
 		color: orange;
-		font-weight: bold;
 	}
 </style>

@@ -5,8 +5,8 @@
 				case 'home':
 					include"views/home.php";
 					break;
-				case 'products':
-					include"views/home.php";
+				case 'product':
+					include"views/product.php";
 					break;
 				case 'about':
 					include"views/about.php";
@@ -14,14 +14,18 @@
 				case 'contact':
 					include"views/contact.php";
 					break;
+				case 'search':
+					include"views/search.php";
+					break;
 				case 'login':
 					include"views/login.php";
 					break;
 				case 'register':
 					include"views/register.php";
 					break;
-				default:
-					
+				case 'logout':
+					unset($_SESSION['user']);
+					echo "<script>location.href = '.';</script>";
 					break;
 			}
 		}else{
@@ -29,3 +33,11 @@
 		}
 	?>
 </div>
+
+<style>
+	.phai{
+		margin-top: 55px;
+		margin-bottom: 74px;
+		min-height: 800px;
+	}
+</style>
