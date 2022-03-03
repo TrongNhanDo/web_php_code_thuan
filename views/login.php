@@ -1,36 +1,36 @@
 <?php 
-	$msg ='';
-	$tk = '';
-	$mk = '';
+	$alert ='';
 	if(isset($_POST['submit'])){
-		$tk = $_POST['username'];
-		$mk = $_POST['password'];
-		$query = "select * from users where username= ";
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$query = "select * from users where email='$username' and password='$password'";
+		$ketqua = $connect -> query($query);
+		if(mysqli_num_rows($ketqua)==false){
+			$alert = "Tên đăng nhập hoặc mật khẩu không đúng!";
+		}else{
+			$_SESSION['user'] = $username;	
+			echo "<script>location.href = '.';</script>";
+		}
 	}
 ?>
-
 <div class="login">
-	<form action="?request=login" method="post">
+	<form method="post">
 		<h1>LOGIN</h1> <hr>
+		<?php echo "<h4 style='text-align: center; color: red'>".$alert."</h4>"; ?>
 		<div class="contai">
 			<label for="username"><b>Username</b></label>
-			<input type="text" placeholder="Enter Username" name="username" required value="<?php echo $tk ?>">
+			<input type="text" placeholder="Enter Username" name="username" required>
 
 			<label for="password"><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="password" required value="<?php echo $mk ?>">
+			<input type="password" placeholder="Enter Password" name="password" required >
 				
 			<input class="button" type="submit" name="submit" value="Login">
 		</div>
 		<div class="contai" style="background-color:#f1f1f1">
-			<button onclick="hihi()" type="button" class="cancelbtn">Cancel</button>
+			<button type="button" class="cancelbtn">Cancel</button>
 			<span class="psw">Forgot password? <a href="#">Register</a> here</span>
 		</div>
 	</form>
-	<script>
-		function hihi(){
-			alert('hihi')
-		}
-	</script>
 </div>
 
 <style>

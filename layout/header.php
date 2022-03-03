@@ -81,10 +81,10 @@
 		color: white
 	}
 	.header_trai{
-		width: 70%;
+		width: 50%;
 	}
 	.header_phai{
-		width: 30%;
+		width: 50%;
 	}
 	.header_phai > .dropdown{
 		float: right;

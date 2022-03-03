@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	$connect = new mysqli("localhost",'root','','shopcase');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
