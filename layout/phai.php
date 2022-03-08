@@ -8,11 +8,29 @@
 				case 'product':
 					include"views/product.php";
 					break;
+				case 'detail':
+					include"views/productdetail.php";
+					break;
 				case 'about':
 					include"views/about.php";
 					break;
 				case 'contact':
 					include"views/contact.php";
+					break;
+				case 'thanks-to-design':
+					include"views/thanks-to-design.php";
+					break;
+				case 'design-yourself':
+					include"views/design-yourself.php";
+					break;
+				case 'wholesalers':
+					include"views/wholesalers-business.php";
+					break;
+				case 'business':
+					include"views/wholesalers-business.php";
+					break;
+				case 'blog':
+					include"views/blog.php";
 					break;
 				case 'search':
 					include"views/search.php";
@@ -25,7 +43,10 @@
 					break;
 				case 'logout':
 					unset($_SESSION['user']);
-					echo "<script>location.href = '.';</script>";
+					header("Location: .");
+					break;
+				case 'cart':
+					include"views/cart.php";
 					break;
 			}
 		}else{

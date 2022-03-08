@@ -1,17 +1,18 @@
-<div class="header">
+
+<div class="header" id="header">
 	<div class="header_trai">
 		<div class="dropdown">
 			<a href="?request=home" class="dropbtn"><i class="fa-solid fa-house-user"></i> HOMEPAGE</a>
 		</div>
 		<div class="dropdown">
-			<a href="?request=product" class="dropbtn"><i class="fa-brands fa-product-hunt"></i> Products</a>
+			<a href="?request=product" class="dropbtn"><i class="fa-brands fa-product-hunt"></i> Collection</a>
 			<div class="dropdown-content">
-				<a href=""><i class="fa-solid fa-angles-right"></i> Name Printing Case</a>
-				<a href=""><i class="fa-solid fa-angles-right"></i> Double Case</a>
-				<a href=""><i class="fa-solid fa-angles-right"></i> Sketch Print Case</a>
-				<a href=""><i class="fa-solid fa-angles-right"></i> Beautiful Personal Image Design Template</a>
-				<a href=""><i class="fa-solid fa-angles-right"></i> Chibi Drawing Case</a>
-				<a href=""><i class="fa-solid fa-angles-right"></i> Company Logo Print Case</a>
+				<a href="?request=search&cateId=1"><i class="fa-solid fa-angles-right"></i> Name Printing Case</a>
+				<a href="?request=search&cateId=2"><i class="fa-solid fa-angles-right"></i> Double Case</a>
+				<a href="?request=search&cateId=3"><i class="fa-solid fa-angles-right"></i> Sketch Print Case</a>
+				<a href="?request=search&cateId=4"><i class="fa-solid fa-angles-right"></i> Beautiful Personal Image Design Template</a>
+				<a href="?request=search&cateId=5"><i class="fa-solid fa-angles-right"></i> Chibi Drawing Case</a>
+				<a href="?request=search&cateId=6"><i class="fa-solid fa-angles-right"></i> Company Logo Print Case</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -19,13 +20,13 @@
 		</div>
 		<div class="dropdown">
 			<a href="?request=contact" class="dropbtn"><i class="fa-solid fa-address-card"></i> Contact</a>
-		</div>
-	</div>
-	<div class="header_phai">		
+		</div>		
 		<div class="dropdown">
-			<a href="?request=cart" class="dropbtn"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+			<form action="?request=search" method="post">
+				<input type="text" name="myInput" id="myInput" onkeyup="" placeholder="Search for names.." value="">
+				<button type="submit" name="btnsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+			</form>
 		</div>
-		
 		<div class="dropdown">
 			<a class="dropbtn"><i class="fa-solid fa-user"></i> Account</a>
 			<!-- Kiểm tra xem người dùng đăng nhập chưa -->
@@ -42,16 +43,12 @@
 				<a href="?request=logout">Logout</a>
 				<?php endif; ?>
 			</div>
-		</div>
+		</div>		
 		<div class="dropdown">
-			<form action="?request=search" method="post">
-				<input type="text" name="myInput" id="myInput" onkeyup="" placeholder="Search for names.." value="">
-				<input type="submit" name="btnsearch" id="btnsearch" value="Search">
-			</form>
+			<a  href="?request=cart" class="dropbtn"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
 		</div>
 	</div>
 </div>
-
 <style>
 	.dropbtn {
 		display: block;
@@ -67,6 +64,9 @@
 	.dropdown {
 		position: relative;
 		display: inline-block;
+	}
+	.dropdown form{
+		margin-left: 10px;
 	}
 
 	.dropdown-content {
@@ -95,15 +95,6 @@
 		background-color: #3e8e41;
 		color: white
 	}
-	.header_trai{
-		width: 50%;
-	}
-	.header_phai{
-		width: 50%;
-	}
-	.header_phai > .dropdown{
-		float: right;
-	}
 	#myInput {
 		width: 60%;
 		font-size: 16px;
@@ -111,7 +102,7 @@
 		border: 1px solid #ddd;
 		margin-top: 8px;
 	}
-	#btnsearch{
+	.dropdown button{
 		padding: 7px 10px;
 	}
 </style>

@@ -48,17 +48,17 @@
     </div>
     <div class="row">
         <div class="col-md-3 col-md-3 text-center">
-            <img src="https://genk.mediacdn.vn/zoom/700_438/139269124445442048/2020/11/25/photo1606322458215-16063224583871061387936.jpg" alt="Alternate Text" style="border-radius: 50%" width="200" />
+            <img src="https://genk.mediacdn.vn/zoom/700_438/139269124445442048/2020/11/25/photo1606322458215-16063224583871061387936.jpg" alt="Alternate Text" style="border-radius: 50%" width="100%" />
             <h4>Đỗ Trọng Nhân</h4>
             <h4>1811061168</h4>
         </div>
         <div class="col-md-3 col-md-3 text-center">
-            <img src="https://kenh14cdn.com/thumb_w/600/2020/8/21/batman-movies-michael-keaton-ben-affleck-robert-pattinson-1597996774578370937106-crop-159799715313026040570.jpg" alt="Alternate Text" style="border-radius: 50%" width="200" />
+            <img src="https://kenh14cdn.com/thumb_w/600/2020/8/21/batman-movies-michael-keaton-ben-affleck-robert-pattinson-1597996774578370937106-crop-159799715313026040570.jpg" alt="Alternate Text" style="border-radius: 50%" width="100%" />
             <h4>Nguyễn Xuân Hùng</h4>
             <h4>1811062810</h4>
         </div>
         <div class="col-md-3 col-md-3 text-center">
-            <img src="https://adchiase.com/upload/tour/cach-len-do-bang-ngoc-the-flash045693556715.jpg" alt="Alternate Text" style="border-radius: 50%" width="200" />
+            <img src="https://adchiase.com/upload/tour/cach-len-do-bang-ngoc-the-flash045693556715.jpg" alt="Alternate Text" style="border-radius: 50%" width="100%" />
             <h4>Trần Tuấn Kiệt</h4>
             <h4>1811060969</h4>
         </div>
@@ -73,8 +73,9 @@
 		margin-bottom: 20px;
 	}
 	.col-md-3{
-		width: 33%;
+		width: 30%;
 		text-align: center;
+        margin-right: 3%;
 	}
 	.col-sm-12 ul li {
 		list-style: none;

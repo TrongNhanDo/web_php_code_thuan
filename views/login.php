@@ -9,14 +9,19 @@
 			if(mysqli_num_rows($ketqua)==false){
 				return "Tên đăng nhập hoặc mật khẩu không đúng!";
 			}else{
-				$_SESSION['user'] = $username;	
-				echo "<script>location.href = '.';</script>";
+				if($username=='admin@gmail.com'){
+					echo "<script>location.href='/web_php_code_thuan/admin/admin.php'</script>";
+				}else{
+					$_SESSION['user'] = $username;	
+					header(("Location: ./"));
+				}				
 			}
 		}
 		return "";
 	}
 	$alert = login();
 ?>
+
 <div class="login">
 	<form method="post">
 		<h1>LOGIN</h1> <hr>
@@ -29,9 +34,6 @@
 			<input type="password" placeholder="Enter Password" name="password" required >
 				
 			<input class="button" type="submit" name="submit" value="Login">
-		</div>
-		<div class="contai" style="background-color:#f1f1f1">
-			<button type="button" class="cancelbtn">Cancel</button>
 			<span class="psw">Forgot password? <a href="?request=register">Register</a> here</span>
 		</div>
 	</form>

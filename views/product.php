@@ -9,11 +9,21 @@
 		<?php foreach($ketqua as $kq):  ?>
 		<div class="pd-item">
 			<div class="img">
-				<a title="<?=$kq['product_name']?>" href=""><img src="<?=$kq['image']?>" alt=""></a>
+				<a title="<?=$kq['product_name']?>" href="?request=detail&productId=<?=$kq['id']?>"><img src="<?=$kq['image']?>" alt=""></a>
 			</div>
-			<p><a href="" class="pd-name"><?=$kq['product_name']?></a></p>
+			<p><a href="?request=detail&productId=<?=$kq['id']?>" class="pd-name"><?=$kq['product_name']?></a></p>
 			<p class="pd-price"><?=number_format($kq['price'])?> VNĐ</p>
-			<a class="btn-order" href="">Order</a>
+			<form action="?request=cart&action=add&productId=<?=$kq['id'] ?>" method="post" style="width: 100%;text-align: center;">
+				<input type="number" name="num" value="1" style="display:none">	
+				<?php if($kq['status']==1): ?>
+					<input id="add" name="addtocart" type="submit" value="Add to cart">
+				<?php else: ?>
+					<div class="fm-hethang">
+						<div class="hethang">Hết hàng</div>
+					</div>
+				<?php endif; ?>	
+					
+			</form>
 		</div>
 	<?php endforeach; ?>
 	<?php endif; ?>
@@ -41,6 +51,7 @@
 		text-align: center;
 	}
 	.pd-name{
+		text-align: center;
 		text-decoration: none;
 		color :black;
 		-webkit-line-clamp: 1;
@@ -57,5 +68,23 @@
 		display: block;
 		text-decoration: none;
 		background-color: #4CAF50;
+	}
+	#add{
+		padding: 5px 20px;
+		background-color: #4CAF50;
+		border: none;
+		cursor: pointer;
+	}
+	#add:hover{
+		opacity: 0.6;
+	}
+	.fm-hethang{
+		text-align: center;
+	}
+	.hethang{
+		background-color: red;
+		width: 100px;
+		padding: 4px 0px;
+		display: inline-block;
 	}
 </style>

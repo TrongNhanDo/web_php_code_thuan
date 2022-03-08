@@ -1,5 +1,5 @@
 <div class="contact">
-	<h1 style="text-align:center">CONTACT US</h1> <hr style="width: 80%;margin:auto">
+	<h2 style="text-align: center; color: green; font-weight: bold">CONTACT US</h2><hr style="width: 80%;margin:auto">
 	<form action="/action_page.php" style="margin-top: 20px;">
 		<label for="fname">First Name</label>
 		<input type="text" id="fname" name="firstname" placeholder="Your name...">
@@ -28,7 +28,7 @@
 		font-weight: bold;
 		text-align: center;
 	}
-	.contact input[type=text], select, textarea {
+	.contact input[type=text], textarea {
 		width: 100%;
 		padding: 12px;
 		border: 1px solid #ccc;

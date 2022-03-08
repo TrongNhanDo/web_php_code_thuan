@@ -16,7 +16,7 @@
 			</a>
 		</div>
 		<div class="img-container">
-			<a href="">
+			<a href="?request=contact">
 				<img src="https://w88betvn.com/wp-content/uploads/sites/5/2019/07/customersupport.png" alt="">
 				<h3>CONTACT US</h3>
 			</a>
