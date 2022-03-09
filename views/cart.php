@@ -19,7 +19,12 @@
 						$_SESSION['cart'][$masanpham] = 1;
 					}
 				}
-				header("Location:?request=cart");
+				if(isset($_POST['bien_url'])){
+					$diachi = $_POST['bien_url'];
+				}else{
+					$diachi = "?request=cart";
+				}
+				header("Location: $diachi");
 				break;
 			case 'delete':
 				$masanpham = $_GET['productId'];
@@ -28,6 +33,7 @@
 				break;
 			case 'deleteAll':
 				unset($_SESSION['cart']);
+				unset($_SESSION['tongsp']);
 				header("Location:?request=cart");
 				break;
 			case 'update':
@@ -65,7 +71,10 @@
 					<th style="width: 10%" colspan="2"></th>
 				</tr>
 		<?php
+			$tongsp = 0;
 			foreach($ketqua as $kq): 
+				$tongsp+= $_SESSION['cart'][$kq['id']];
+				$_SESSION['tongsp'] =  $tongsp;
 		?> 
 				<tr>
 					<td><img src="<?=$kq['image'];?>" alt="" width="100%"></td>

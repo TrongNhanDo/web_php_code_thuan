@@ -1,4 +1,8 @@
-
+<?php 
+	if(!isset($_SESSION['tongsp'])){
+		$_SESSION['tongsp'] = 0;
+	}
+?>
 <div class="header" id="header">
 	<div class="header_trai">
 		<div class="dropdown">
@@ -45,7 +49,7 @@
 			</div>
 		</div>		
 		<div class="dropdown">
-			<a  href="?request=cart" class="dropbtn"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+			<a  href="?request=cart" class="dropbtn"><i class="fa-solid fa-cart-shopping"></i> Cart (<?=$_SESSION['tongsp']?>)</a>
 		</div>
 	</div>
 </div>

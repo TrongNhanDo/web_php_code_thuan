@@ -13,10 +13,12 @@
 			</div>
 			<p><a href="?request=detail&productId=<?=$kq['id']?>" class="pd-name"><?=$kq['product_name']?></a></p>
 			<p class="pd-price"><?=number_format($kq['price'])?> VNĐ</p>
+
 			<form action="?request=cart&action=add&productId=<?=$kq['id'] ?>" method="post" style="width: 100%;text-align: center;">
 				<input type="number" name="num" value="1" style="display:none">	
 				<?php if($kq['status']==1): ?>
 					<input id="add" name="addtocart" type="submit" value="Add to cart">
+					<input name="bien_url" type="hidden" value="<?=$_SERVER['REQUEST_URI'] ?>">
 				<?php else: ?>
 					<div class="fm-hethang">
 						<div class="hethang">Hết hàng</div>

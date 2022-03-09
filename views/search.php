@@ -48,6 +48,7 @@
 				<input type="number" name="num" value="1" style="display:none">		
 				<?php if($kq['status']==1): ?>
 					<input id="add" name="addtocart" type="submit" value="Add to cart">
+					<input name="bien_url" type="hidden" value="<?=$_SERVER['REQUEST_URI'] ?>">
 				<?php else: ?>
 					<div class="fm-hethang">
 						<div class="hethang">Hết hàng</div>
