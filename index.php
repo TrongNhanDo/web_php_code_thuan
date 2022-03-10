@@ -53,23 +53,4 @@
 		<?php include"layout/footer.php" ?>
 	</div>
 </body>
-<script>
-	
-	const menus = document.querySelectorAll('body > div > div.container > div.trai > ul:nth-child(3) > li')
-
-	const add_active = (thutu) => {
-		console.log(thutu)
-		menus.forEach((value, index) => {
-			if(thutu === index){
-				if(!value.classList.contains('orange')){
-					value.classList.add('orange')
-				}
-			}else{
-				if(value.classList.contains('orange')){
-					value.classList.remove('orange')
-				}
-			}
-		}) 
-	}
-</script>
 </html>

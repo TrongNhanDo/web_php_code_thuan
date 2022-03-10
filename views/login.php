@@ -13,18 +13,26 @@
 					echo "<script>location.href='/web_php_code_thuan/admin/admin.php'</script>";
 				}else{
 					$_SESSION['user'] = $username;	
-					header(("Location: ./"));
+					if(isset($_GET['order'])){
+						header(("Location: ?request=order"));
+					}else{
+						header(("Location: ./"));
+					}
 				}				
 			}
 		}
 		return "";
 	}
 	$alert = login();
+	if(!isset($_SESSION['thongbao_order'])){
+		$_SESSION['thongbao_order'] = '';
+	}
 ?>
 
 <div class="login">
 	<form method="post">
-		<h1>LOGIN</h1> <hr>
+		
+		<?php echo "<h4 style='text-align: center; color: red'>".$_SESSION['thongbao_order']."</h4>"; ?>
 		<?php echo "<h4 style='text-align: center; color: red'>".$alert."</h4>"; ?>
 		<div class="contai">
 			<label for="username"><b>Username</b></label>

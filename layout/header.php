@@ -1,5 +1,5 @@
 <?php 
-	if(!isset($_SESSION['tongsp'])){
+	if(!isset($_SESSION['tongsp']) || !isset($_SESSION['cart']) || $_SESSION['cart']==null){
 		$_SESSION['tongsp'] = 0;
 	}
 ?>

@@ -42,10 +42,19 @@
 				}
 				header("Location:?request=cart");
 				break;
+			case 'order':
+				if(isset($_SESSION['user'])){
+					header("Location: ?request=order");
+				}else{
+					$_SESSION['thongbao_order'] = "Vui lòng đăng nhập để đặt hàng!";
+					header("Location: ?request=login&order=1");
+				}
+				break;
 		}
 	}
 	
 ?>
+
 <div class="cart">
 <h1>SHOPPING CART</h1>
 <hr>
@@ -101,7 +110,7 @@
 					<a style="background-color: red;" onclick="return confirm('Bạn có chắc muốn xóa tất cả sản phẩm!')" href="?request=cart&action=deleteAll">Delete all products</a>
 				</div>
 				<div class="l">
-					<a style="background-color:dodgerblue" href="">PAYMENT</a>
+					<a style="background-color:dodgerblue" href="?request=cart&action=order">PAYMENT</a>
 				</div>
 			</div>			
 		<?php

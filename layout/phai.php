@@ -48,6 +48,9 @@
 				case 'cart':
 					include"views/cart.php";
 					break;
+				case 'order':
+					include"views/order.php";
+					break;
 			}
 		}else{
 			include"views/home.php";
